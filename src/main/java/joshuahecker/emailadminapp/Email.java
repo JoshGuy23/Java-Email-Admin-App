@@ -9,7 +9,7 @@ public class Email {
     private String email;
     private String password;
     private String alt_email;
-    private int mailboxCap;
+    private int mailboxCap = 0;
     
     public Email(String f_name, String l_name)
     {
@@ -24,6 +24,8 @@ public class Email {
                 this.department.toLowerCase() + this.company + ".com";
         
         System.out.println("Your email address is now: " + this.email);
+        
+        this.password = this.generatePassword();
     }
     
     private void set_department()
@@ -52,5 +54,19 @@ public class Email {
             default:
                 this.department = "";
         }
+    }
+    
+    private String generatePassword()
+    {
+        String pass_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*";
+        int pass_length = (int) ((Math.random() * (17 - 8)) + 8);
+        String pass = "";
+        
+        for (int i = 0; i < pass_length; i++)
+        {
+            pass += pass_string.charAt((int)(Math.random() * pass_string.length()));
+        }
+        
+        return pass;
     }
 }
