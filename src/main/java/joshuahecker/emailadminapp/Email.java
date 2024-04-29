@@ -6,6 +6,7 @@ public class Email {
     private String last_name;
     private String department;
     private String company = "company";
+    private String email;
     private String password;
     private String alt_email;
     private int mailboxCap;
@@ -17,6 +18,12 @@ public class Email {
         
         System.out.println("EMAIL CREATED: " + this.first_name + " " + this.last_name);
         this.set_department();
+        
+        this.email = this.first_name.replaceAll("\\s", "").toLowerCase() + "." + 
+                this.last_name.replaceAll("\\s", "").toLowerCase() + "@" + 
+                this.department.toLowerCase() + "." + this.company + ".com";
+        
+        System.out.println("Your email address is now: " + this.email);
     }
     
     private void set_department()
