@@ -2,25 +2,25 @@ package joshuahecker.emailadminapp;
 import java.util.Scanner;
 
 public class Email {
-    private String first_name;
-    private String last_name;
+    private String firstName;
+    private String lastName;
     private String department;
     private String company = "company";
     private String email;
     private String password;
-    private String alt_email;
+    private String altEmail;
     private int mailboxCap = 0;
     
-    public Email(String f_name, String l_name)
+    public Email(String fName, String lName)
     {
-        this.first_name = f_name;
-        this.last_name = l_name;
+        this.firstName = fName;
+        this.lastName = lName;
         
-        System.out.println("EMAIL CREATED: " + this.first_name + " " + this.last_name);
-        this.set_department();
+        System.out.println("EMAIL CREATED: " + this.firstName + " " + this.lastName);
+        this.setDepartment();
         
-        this.email = this.first_name.replaceAll("\\s", "").toLowerCase() + "." + 
-                this.last_name.replaceAll("\\s", "").toLowerCase() + "@" + 
+        this.email = this.firstName.replaceAll("\\s", "").toLowerCase() + "." + 
+                this.lastName.replaceAll("\\s", "").toLowerCase() + "@" + 
                 this.department.toLowerCase() + this.company + ".com";
         
         System.out.println("Your email address is now: " + this.email);
@@ -29,7 +29,7 @@ public class Email {
         System.out.println("Password: " + this.password);
     }
     
-    private void set_department()
+    private void setDepartment()
     {
         Scanner input = new Scanner(System.in);
         
@@ -39,9 +39,9 @@ public class Email {
         System.out.println("3. Accounting");
         System.out.println("4. None");
         
-        int dep_choice = input.nextInt();
+        int depChoice = input.nextInt();
         
-        switch(dep_choice)
+        switch(depChoice)
         {
             case 1:
                 this.department = "Sales.";
@@ -59,13 +59,13 @@ public class Email {
     
     private String generatePassword()
     {
-        String pass_string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*";
-        int pass_length = (int) ((Math.random() * (17 - 8)) + 8);
+        String passString = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&*";
+        int passLength = (int) ((Math.random() * (17 - 8)) + 8);
         String pass = "";
         
-        for (int i = 0; i < pass_length; i++)
+        for (int i = 0; i < passLength; i++)
         {
-            pass += pass_string.charAt((int)(Math.random() * pass_string.length()));
+            pass += passString.charAt((int)(Math.random() * passString.length()));
         }
         
         return pass;
