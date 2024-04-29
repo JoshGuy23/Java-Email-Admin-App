@@ -21,7 +21,7 @@ public class Email {
         
         this.email = this.first_name.replaceAll("\\s", "").toLowerCase() + "." + 
                 this.last_name.replaceAll("\\s", "").toLowerCase() + "@" + 
-                this.department.toLowerCase() + "." + this.company + ".com";
+                this.department.toLowerCase() + this.company + ".com";
         
         System.out.println("Your email address is now: " + this.email);
     }
@@ -41,13 +41,13 @@ public class Email {
         switch(dep_choice)
         {
             case 1:
-                this.department = "Sales";
+                this.department = "Sales.";
                 break;
             case 2:
-                this.department = "Development";
+                this.department = "Development.";
                 break;
             case 3:
-                this.department = "Accounting";
+                this.department = "Accounting.";
                 break;
             default:
                 this.department = "";
