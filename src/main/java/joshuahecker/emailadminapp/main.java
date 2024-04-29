@@ -10,6 +10,15 @@ public class main {
         
         System.out.println("Please enter your first name.");
         String lName = input.nextLine();
+        
+        Email em = new Email(fName, lName);
+        em.setPassword();
+        em.setMailboxCap();
+        em.setAltEmail();
+        
+        em.getEmail();
+        em.getName();
+        em.getMailboxCap();
     }
     
 }
