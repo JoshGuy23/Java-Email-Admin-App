@@ -6,10 +6,10 @@ public class main {
         Scanner input = new Scanner(System.in);
         
         System.out.println("Please enter your first name.");
-        String f_name = input.nextLine().replaceAll("\\s", "");
+        String f_name = input.nextLine();
         
         System.out.println("Please enter your first name.");
-        String l_name = input.nextLine().replaceAll("\\s", "");
+        String l_name = input.nextLine();
     }
     
 }
