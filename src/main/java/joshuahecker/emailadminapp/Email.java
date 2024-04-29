@@ -26,6 +26,7 @@ public class Email {
         System.out.println("Your email address is now: " + this.email);
         
         this.password = this.generatePassword();
+        System.out.println("Password: " + this.password);
     }
     
     private void set_department()
@@ -68,5 +69,11 @@ public class Email {
         }
         
         return pass;
+    }
+    
+    public void setPassword()
+    {
+        this.password = this.generatePassword();
+        System.out.println("Password: " + this.password);
     }
 }
