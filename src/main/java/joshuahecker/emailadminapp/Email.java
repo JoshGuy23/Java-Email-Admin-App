@@ -8,7 +8,7 @@ public class Email {
     private String company = "company";
     private String email;
     private String password;
-    private String altEmail;
+    private String altEmail = "n/a";
     private int mailboxCap = 0;
     
     public Email(String fName, String lName)
@@ -91,5 +91,21 @@ public class Email {
         
         System.out.println("Please set an alternate email address:");
         this.altEmail = input.nextLine();
+    }
+    
+    public void getName()
+    {
+        System.out.println("The user's name is " + this.firstName + " " + this.lastName);
+    }
+    
+    public void getEmail()
+    {
+        System.out.println("Your main email is: " + this.email);
+        System.out.println("Your alt email is: " + this.altEmail);
+    }
+    
+    public void getMailboxCap()
+    {
+        System.out.println("Your current mailbox capacity is: " + this.mailboxCap);
     }
 }
