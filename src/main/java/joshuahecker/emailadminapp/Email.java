@@ -76,4 +76,20 @@ public class Email {
         this.password = this.generatePassword();
         System.out.println("Password: " + this.password);
     }
+    
+    public void setMailboxCap()
+    {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("How much mailbox capacity would you like to have?");
+        this.mailboxCap = input.nextInt();
+    }
+    
+    public void setAltEmail()
+    {
+        Scanner input = new Scanner(System.in);
+        
+        System.out.println("Please set an alternate email address:");
+        this.altEmail = input.nextLine();
+    }
 }
